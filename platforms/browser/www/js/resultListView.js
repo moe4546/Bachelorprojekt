@@ -4,6 +4,7 @@ var ResultListView = Backbone.View.extend({
   className: 'listView',
   model: ResultCollection,
   render: function() {
+	$("#content").html("");
     var self = this;
     this.model.each(function(result) {
       var view = new ResultView({ model: result });

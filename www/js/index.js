@@ -17,28 +17,32 @@ function onDeviceReady() {
       source: 'www.google.de',
     }),
     new Result({
-      label: 'Testüberschrift',
+      label: 'Testüberschrift3',
       description: 'la li lu nur der Mann im Mond schs aut zu. la li lu nur der  Mond schs aut zu. la li lu nur der  Mond schs aut zu. la li lu nur der Mann im Mond schaut zu.',
       date: '10.08.2016',
       source: 'www.google.de',
     }),
     new Result({
-      label: 'Testüberschrift',
+      label: 'Testüberschrift4',
       description: 'la li lu nur der Mann im Mond schs aut zu. la li lu nur der  Mond schs aut zu. la li lu nur der  Mond schs aut zu. la li lu nur der Mann im Mond schaut zu.',
       date: '10.08.2016',
       source: 'www.google.de',
     }),
     new Result({
-      label: 'Testüberschrift',
+      label: 'Testüberschrift5',
       description: 'la li lu nur der Mann im Mond schs aut zu. la li lu nur der  Mond schs aut zu. la li lu nur der  Mond schs aut zu. la li lu nur der Mann im Mond schaut zu.',
       date: '10.08.2016',
       source: 'www.google.de',
     }),
   ]);
+  
+  window.bus = _.extend({}, Backbone.Events);
 
   var listView = new ResultListView({ model: testResults});
   //$("#content").html(listView.render().$el);
   listView.render();
+  
+  var header = new HeaderView({bus: window.bus});
 
   window.router = new AppRouter();
   Backbone.history.start();

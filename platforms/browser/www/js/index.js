@@ -35,10 +35,16 @@ function onDeviceReady() {
       source: 'www.google.de',
     }),
   ]);
+  
+  window.bus = _.extend({}, Backbone.Events);
 
   var listView = new ResultListView({ model: testResults});
   //$("#content").html(listView.render().$el);
   listView.render();
+  
+  var header = new HeaderView({bus: window.bus});
+  
+  
 
   window.router = new AppRouter();
   Backbone.history.start();
